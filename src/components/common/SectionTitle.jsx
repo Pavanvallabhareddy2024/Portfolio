@@ -1,8 +1,19 @@
 import { motion } from 'framer-motion';
 
-const SectionTitle = ({ eyebrow, title, description, align = 'center' }) => {
+const SectionTitle = ({
+  eyebrow,
+  title,
+  description,
+  align = 'center',
+  className = '',
+  titleClassName = '',
+  descriptionClassName = '',
+}) => {
   const alignClass =
     align === 'left' ? 'text-left items-start' : 'text-center items-center';
+  const titleAlignClass =
+    align === 'center' ? 'w-full text-center' : 'w-full text-left';
+  const descriptionAlignClass = align === 'center' ? 'text-center' : 'text-left';
 
   return (
     <motion.div
@@ -10,9 +21,9 @@ const SectionTitle = ({ eyebrow, title, description, align = 'center' }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`mx-auto flex max-w-3xl flex-col gap-3 ${alignClass} ${
+      className={`mx-auto flex w-full max-w-3xl flex-col gap-3 ${alignClass} ${
         align === 'left' ? 'mx-0' : ''
-      }`}
+      } ${className}`}
     >
       {eyebrow ? (
         <span
@@ -24,11 +35,15 @@ const SectionTitle = ({ eyebrow, title, description, align = 'center' }) => {
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="font-display text-3xl font-bold leading-tight md:text-5xl">
+      <h2
+        className={`font-display text-3xl font-bold leading-tight md:text-5xl ${titleAlignClass} ${titleClassName}`}
+      >
         {title}
       </h2>
       {description ? (
-        <p className="max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
+        <p
+          className={`max-w-2xl text-sm leading-relaxed text-white/70 md:text-base ${descriptionAlignClass} ${descriptionClassName}`}
+        >
           {description}
         </p>
       ) : null}

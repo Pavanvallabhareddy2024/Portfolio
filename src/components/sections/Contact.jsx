@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
@@ -6,7 +5,6 @@ import {
   MapPin,
   Linkedin,
   Send,
-  CheckCircle2,
   User,
   MessageSquare,
 } from 'lucide-react';
@@ -41,13 +39,25 @@ const Field = ({
 };
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-
   const onSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3500);
-    e.currentTarget.reset();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const name = String(fd.get('name') ?? '').trim();
+    const email = String(fd.get('email') ?? '').trim();
+    const subject = String(fd.get('subject') ?? '').trim();
+    const message = String(fd.get('message') ?? '').trim();
+
+    const text = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      '',
+      message,
+    ].join('\n');
+
+    const url = `https://wa.me/${personal.whatsappWaMe}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -176,21 +186,26 @@ const Contact = () => {
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <Field
+                  name="name"
                   label="Your name"
                   icon={User}
                   placeholder="Jane Doe"
+                  autoComplete="name"
                   required
                 />
                 <Field
+                  name="email"
                   label="Email"
                   icon={Mail}
                   type="email"
                   placeholder="jane@company.com"
+                  autoComplete="email"
                   required
                 />
               </div>
               <div className="mt-4">
                 <Field
+                  name="subject"
                   label="Subject"
                   icon={MessageSquare}
                   placeholder="Full Stack role / Project / Collaboration"
@@ -199,6 +214,7 @@ const Contact = () => {
               </div>
               <div className="mt-4">
                 <Field
+                  name="message"
                   as="textarea"
                   label="Message"
                   icon={MessageSquare}
@@ -208,26 +224,11 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="mt-6 flex items-center justify-between gap-3">
-                <p className="text-xs text-white/50">
-                  Form is UI-only for now — replies via email work great.
-                </p>
+              <div className="mt-6 flex justify-end">
                 <AnimatedButton type="submit" variant="primary" iconRight={Send}>
-                  {submitted ? 'Sent' : 'Send Message'}
+                  Send Message
                 </AnimatedButton>
               </div>
-
-              {submitted && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 flex items-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-300"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  Thanks! Your message UI was submitted (demo). I&apos;ll wire
-                  this up to email next.
-                </motion.div>
-              )}
             </GlassCard>
           </motion.form>
         </div>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Code2, Server, Cloud, Zap } from 'lucide-react';
 import GlassCard from '../common/GlassCard';
 import SectionTitle from '../common/SectionTitle';
-import { aboutHighlights, stats, personal } from '../../data/portfolioData';
+import { aboutHighlights, personal, stats } from '../../data/portfolioData';
 
 const iconMap = {
   code: Code2,
@@ -32,6 +32,9 @@ const About = () => {
     <section id="about" className="section-padding relative">
       <div className="container-app">
         <SectionTitle
+          className="max-w-[95vw] sm:max-w-none lg:max-w-6xl"
+          titleClassName="md:whitespace-nowrap"
+          descriptionClassName="max-w-none w-full"
           eyebrow="About Me"
           title={
             <>
@@ -39,7 +42,15 @@ const About = () => {
               full‑stack experiences
             </>
           }
-          description="I'm a full-stack developer experienced in React, Node.js, Express, MySQL and AWS — building dashboards, REST APIs, authentication, cloud storage, and real-time systems."
+          description={
+            <>
+              I&apos;m a full-stack developer experienced in React, Node.js,
+              Express, MySQL and AWS — building dashboards, REST APIs,{' '}
+              <span className="lg:mt-1 lg:block">
+                authentication, cloud storage, and real-time systems.
+              </span>
+            </>
+          }
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -96,7 +107,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Stat strip */}
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {stats.map((s) => (
                 <div

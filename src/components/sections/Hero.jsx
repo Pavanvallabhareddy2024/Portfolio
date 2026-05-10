@@ -8,7 +8,7 @@ import {
   Code2,
 } from 'lucide-react';
 import AnimatedButton from '../common/AnimatedButton';
-import { personal, stats } from '../../data/portfolioData';
+import { personal } from '../../data/portfolioData';
 
 const titleStagger = {
   hidden: {},
@@ -115,26 +115,6 @@ const Hero = () => {
                 LinkedIn
               </AnimatedButton>
             </motion.div>
-
-            {/* Quick stats */}
-            <motion.div
-              variants={lineUp}
-              className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4"
-            >
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="glass-soft px-4 py-3 text-center"
-                >
-                  <div className="text-gradient font-display text-xl font-bold md:text-2xl">
-                    {s.value}
-                  </div>
-                  <div className="mt-0.5 text-[11px] uppercase tracking-wider text-white/55">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* Right profile card */}
@@ -154,67 +134,73 @@ const Hero = () => {
 
 const ProfileCard = () => (
   <div className="relative mx-auto max-w-md">
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute -left-6 -top-6 hidden h-24 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:block"
-    >
-      <div className="flex h-full flex-col items-center justify-center text-center">
-        <span className="text-gradient font-display text-2xl font-extrabold">
-          40+
-        </span>
-        <span className="text-[10px] uppercase tracking-wider text-white/55">
-          Projects
-        </span>
-      </div>
-    </motion.div>
+    <div className="relative mt-4 mb-6 sm:mt-6 sm:mb-8">
+      {/* Corner stats — z-30 + opaque panel so they sit clearly on top of the frame edge */}
+      <motion.div
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -left-1 -top-3 z-30 hidden w-[5.75rem] rounded-2xl border border-white/15 bg-ink-950/95 p-3 shadow-xl shadow-black/50 ring-1 ring-white/5 backdrop-blur-md sm:block md:-left-3 md:-top-4"
+      >
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="text-gradient font-display text-xl font-extrabold md:text-2xl">
+            40+
+          </span>
+          <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-white/60">
+            Projects
+          </span>
+        </div>
+      </motion.div>
 
-    <motion.div
-      animate={{ y: [0, 10, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute -bottom-6 -right-6 hidden h-24 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md md:block"
-    >
-      <div className="flex h-full flex-col items-center justify-center text-center">
-        <span className="text-gradient font-display text-2xl font-extrabold">
-          200+
-        </span>
-        <span className="text-[10px] uppercase tracking-wider text-white/55">
-          Day Streak
-        </span>
-      </div>
-    </motion.div>
+      <motion.div
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -bottom-2 -right-1 z-30 hidden w-[5.75rem] rounded-2xl border border-white/15 bg-ink-950/95 p-3 shadow-xl shadow-black/50 ring-1 ring-white/5 backdrop-blur-md sm:block md:-bottom-3 md:-right-3"
+      >
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="text-gradient font-display text-xl font-extrabold md:text-2xl">
+            200+
+          </span>
+          <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-white/60">
+            Day Streak
+          </span>
+        </div>
+      </motion.div>
 
-    <div className="glass-strong relative overflow-hidden p-2">
-      {/* Glow halo */}
-      <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-neon-cyan/30 via-neon-violet/30 to-neon-teal/30 blur-2xl" />
-      <div className="relative overflow-hidden rounded-[20px]">
-        <div className="aspect-[4/5] w-full">
+      <div className="glass-strong relative z-10 isolate overflow-hidden rounded-[1.35rem] p-2">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 rounded-[inherit] bg-gradient-to-r from-neon-cyan/25 via-neon-violet/25 to-neon-teal/25 opacity-90 blur-xl"
+        aria-hidden
+      />
+      <div className="relative overflow-hidden rounded-2xl">
+        {/* Shorter than 4/5 so overall hero image height drops */}
+        <div className="relative aspect-[5/6] w-full">
           <img
             src={personal.avatar}
             alt={personal.name}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
             loading="eager"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent" />
-        </div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/15 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-neon-cyan">
-                Currently
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+            <div className="flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <div className="text-xs uppercase tracking-[0.2em] text-neon-cyan">
+                  Currently
+                </div>
+                <div className="font-display text-base font-semibold leading-snug">
+                  {personal.currentlyBuilding}
+                </div>
               </div>
-              <div className="font-display text-base font-semibold">
-                Building cloud‑native apps
+              <div className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+                <span className="absolute h-2.5 w-2.5 animate-ping rounded-full bg-emerald-400/70" />
+                <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
               </div>
-            </div>
-            <div className="flex h-2.5 w-2.5 items-center justify-center">
-              <span className="absolute h-2.5 w-2.5 animate-ping rounded-full bg-emerald-400/70" />
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 );

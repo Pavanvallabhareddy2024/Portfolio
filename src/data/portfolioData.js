@@ -53,12 +53,17 @@ export const personal = {
     'I build scalable web applications, cloud-integrated systems, REST APIs, analytics dashboards, and production-ready full-stack solutions.',
   email: 'saipavan2024@gmail.com',
   phone: '+91 8374672844',
+  /** Digits only (country code + number) for https://wa.me/… */
+  whatsappWaMe: '918373672844',
   location: 'Kothapeta, India',
   linkedin: 'https://www.linkedin.com/in/pavan-vallabhareddy/',
   github: 'https://github.com/',
   portfolioJourney: 'https://build200.lovable.app',
   resumeUrl: '#',
   avatar: profilePlaceholder,
+  /** Shown under “Currently” on the hero profile card */
+  currentlyBuilding:
+    'Building full-stack web applications & cloud-based systems',
 };
 
 export const navLinks = [
@@ -71,11 +76,12 @@ export const navLinks = [
   { id: 'contact', label: 'Contact' },
 ];
 
+/** Compact labels for About bio card — same four milestones as `achievements` */
 export const stats = [
-  { label: 'Projects Built', value: '40+', accent: 'cyan' },
-  { label: 'Day Build Streak', value: '200+', accent: 'violet' },
-  { label: 'Role', value: 'Full Stack Dev', accent: 'teal' },
-  { label: 'Cloud Apps', value: 'AWS Native', accent: 'blue' },
+  { label: '200‑Day Full Stack Challenge', value: '200+' },
+  { label: 'Projects Built', value: '40+' },
+  { label: 'Continuous Build Streak', value: '200+' },
+  { label: 'Technologies', value: '20+' },
 ];
 
 export const aboutHighlights = [
@@ -407,10 +413,10 @@ export const achievements = [
       'Maintained an unbroken 200+ day streak of building, learning and shipping consistently.',
   },
   {
-    title: 'Showcase Platform',
-    value: 'Live',
+    title: 'Technologies',
+    value: '20+',
     description:
-      'Built a public platform (build200.lovable.app) to publish and document the entire journey.',
+      'Hands-on with 20+ technologies across frontend, backend, databases, cloud, and tooling — from React & Node to AWS, SQL, and APIs.',
   },
 ];
 
@@ -418,8 +424,20 @@ export const education = [
   {
     school: 'BVC Engineering College',
     degree: 'B.Tech in Computer Science Engineering (AI & DS)',
-    period: '2020 – 2024',
+    period: '2020 – 2024 · Odalarevu, India',
     detail: 'CGPA: 7.98',
+  },
+  {
+    school: 'Aditya Educational Institutions',
+    degree: 'Intermediate — Board of Intermediate Education, AP',
+    period: '2018 – 2020 · Kakinada, India',
+    detail: 'CGPA: 7.23',
+  },
+  {
+    school: 'Oxford Concept School',
+    degree: 'Secondary School — Board of Secondary Education, AP',
+    period: '2017 – 2018 · Kothapeta, India',
+    detail: 'CGPA: 9.8',
   },
 ];
 

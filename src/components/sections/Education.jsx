@@ -9,19 +9,26 @@ const Education = () => {
     <section id="education" className="section-padding relative">
       <div className="container-app">
         <SectionTitle
+          className="max-w-5xl"
+          titleClassName="md:whitespace-nowrap"
           eyebrow="Education"
           title={
             <>
-              Foundations in <span className="text-gradient">CSE · AI & DS</span>
+              Academic path to{' '}
+              <span className="text-gradient">B.Tech</span>
             </>
           }
-          description="Where I studied computer science and built the engineering foundations I use today."
+          description="Secondary and intermediate in Andhra Pradesh, then a B.Tech in Computer Science Engineering (AI & DS) — the academic backbone for the engineering work I do today."
         />
 
-        <div className="mx-auto mt-14 max-w-3xl space-y-5">
-          {education.map((e, i) => (
+        <div className="mx-auto mt-14 flex w-full max-w-5xl flex-col gap-5">
+          {education.map((e, i) => {
+            const staggerClass =
+              i === 0 ? 'self-end' : i === 1 ? 'self-center' : 'self-start';
+            return (
             <motion.div
               key={e.school}
+              className={`w-full max-w-3xl ${staggerClass}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
@@ -52,7 +59,8 @@ const Education = () => {
                 </div>
               </GlassCard>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
