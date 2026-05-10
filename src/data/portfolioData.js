@@ -57,9 +57,12 @@ export const personal = {
   whatsappWaMe: '918373672844',
   location: 'Kothapeta, India',
   linkedin: 'https://www.linkedin.com/in/pavan-vallabhareddy/',
-  github: 'https://github.com/',
+  github: 'https://github.com/Pavanvallabhareddy2024',
   portfolioJourney: 'https://build200.lovable.app',
-  resumeUrl: '#',
+  /** Served from /public/resume.pdf */
+  resumeUrl: '/resume.pdf',
+  resumeDownloadFileName:
+    'Sai_Pavan_Vallabhareddy_FullStack_Developer_Resume.pdf',
   avatar: profilePlaceholder,
   /** Shown under “Currently” on the hero profile card */
   currentlyBuilding:
@@ -329,7 +332,17 @@ export const experiences = [
       'Built event-driven workflows using AWS Lambda + DynamoDB Streams for real-time data.',
       'Worked with Firebase, AppSync and AI-powered notification workflows on AWS Bedrock.',
     ],
-    chips: ['React', 'Node.js', 'AWS', 'DynamoDB', 'AppSync', 'Lambda', 'Cognito'],
+    chips: [
+      'React',
+      'Node.js',
+      'JavaScript',
+      'AWS',
+      'DynamoDB',
+      'AppSync',
+      'Lambda',
+      'Cognito',
+      'MySQL',
+    ],
   },
 ];
 
@@ -356,7 +369,10 @@ export const projects = [
       'Amplify',
       'MySQL',
     ],
-    links: { live: '#', github: '#' },
+    links: {
+      live: '#',
+      github: 'https://github.com/Pavanvallabhareddy2024',
+    },
     accent: 'cyan',
   },
   {
@@ -372,7 +388,10 @@ export const projects = [
       'REST APIs with Express.js and clean service layer',
     ],
     tech: ['React.js', 'Node.js', 'Express.js', 'MySQL', 'REST APIs'],
-    links: { live: '#', github: '#' },
+    links: {
+      live: '#',
+      github: 'https://github.com/Pavanvallabhareddy2024',
+    },
     accent: 'violet',
   },
   {
@@ -388,7 +407,10 @@ export const projects = [
       'Live deployment pipelines and demos',
     ],
     tech: ['React.js', 'JavaScript', 'Node.js', 'AWS', 'Firebase'],
-    links: { live: 'https://build200.lovable.app', github: '#' },
+    links: {
+      live: 'https://build200.lovable.app',
+      github: 'https://github.com/Pavanvallabhareddy2024',
+    },
     accent: 'teal',
   },
 ];

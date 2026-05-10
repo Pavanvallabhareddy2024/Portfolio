@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import {
-  ArrowRight,
   Mail,
   Linkedin,
   MapPin,
   Sparkles,
   Code2,
+  FileDown,
 } from 'lucide-react';
 import AnimatedButton from '../common/AnimatedButton';
 import { personal } from '../../data/portfolioData';
@@ -86,13 +86,14 @@ const Hero = () => {
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <AnimatedButton
-                href="#projects"
+                href={personal.resumeUrl}
                 as="a"
+                download={personal.resumeDownloadFileName}
                 variant="primary"
                 size="lg"
-                iconRight={ArrowRight}
+                iconRight={FileDown}
               >
-                View Projects
+                Download Resume
               </AnimatedButton>
               <AnimatedButton
                 href="#contact"

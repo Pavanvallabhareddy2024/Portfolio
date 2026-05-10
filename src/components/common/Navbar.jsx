@@ -91,13 +91,22 @@ const Navbar = () => {
           </ul>
 
           {/* CTA */}
-          <a
-            href="#contact"
-            onClick={(e) => handleClick(e, 'contact')}
-            className="hidden rounded-full bg-gradient-to-r from-neon-cyan to-neon-violet px-4 py-2 text-sm font-semibold text-ink-950 shadow-glow transition-transform hover:scale-[1.03] lg:inline-flex"
-          >
-            Let&apos;s Talk
-          </a>
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href={personal.resumeUrl}
+              download={personal.resumeDownloadFileName}
+              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 transition-colors hover:border-white/25 hover:bg-white/10"
+            >
+              Resume
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => handleClick(e, 'contact')}
+              className="rounded-full bg-gradient-to-r from-neon-cyan to-neon-violet px-4 py-2 text-sm font-semibold text-ink-950 shadow-glow transition-transform hover:scale-[1.03]"
+            >
+              Let&apos;s Talk
+            </a>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -135,7 +144,15 @@ const Navbar = () => {
                     </a>
                   </li>
                 ))}
-                <li className="mt-2">
+                <li className="mt-2 flex flex-col gap-2">
+                  <a
+                    href={personal.resumeUrl}
+                    download={personal.resumeDownloadFileName}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white"
+                  >
+                    Download Resume
+                  </a>
                   <a
                     href="#contact"
                     onClick={(e) => handleClick(e, 'contact')}

@@ -28,31 +28,31 @@ const Footer = () => {
               <p className="max-w-xs text-sm leading-relaxed text-white/65">
                 {personal.tagline}
               </p>
-              <div className="flex gap-2 pt-2">
+              <div className="relative z-10 flex gap-2 pt-2">
                 <a
                   href={personal.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-neon-cyan/40 hover:text-neon-cyan hover:shadow-glow"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-neon-cyan/40 hover:text-neon-cyan hover:shadow-glow"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-4 w-4" />
+                  <Linkedin className="pointer-events-none h-4 w-4" aria-hidden />
                 </a>
                 <a
                   href={personal.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-white/30 hover:text-white"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-white/30 hover:text-white"
                   aria-label="GitHub"
                 >
-                  <Github className="h-4 w-4" />
+                  <Github className="pointer-events-none h-4 w-4" aria-hidden />
                 </a>
                 <a
                   href={`mailto:${personal.email}`}
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-neon-violet/40 hover:text-neon-violet hover:shadow-glow-violet"
-                  aria-label="Email"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-neon-violet/40 hover:text-neon-violet hover:shadow-glow-violet"
+                  aria-label={`Email ${personal.email}`}
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="pointer-events-none h-4 w-4" aria-hidden />
                 </a>
               </div>
             </div>
