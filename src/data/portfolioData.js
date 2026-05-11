@@ -1,14 +1,8 @@
 /**
- * Placeholder images.
- * Replace these URLs with imports from `../assets/images/...` once real images are added.
- *
- * Example (after dropping files into src/assets/images/):
- *   import profilePlaceholder from '../assets/images/profile-placeholder.jpg';
- *   ...
- *   avatar: profilePlaceholder,
+ * Hero avatar from `../assets/images/profile.png`. Project cards use Unsplash URLs below.
  */
-const profilePlaceholder =
-  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=900&q=80';
+import profilePhoto from '../assets/images/profile.png';
+
 const projectDashpod =
   'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';
 const projectEmbeHome =
@@ -54,7 +48,7 @@ export const personal = {
   email: 'saipavan2024@gmail.com',
   phone: '+91 8374672844',
   /** Digits only (country code + number) for https://wa.me/… */
-  whatsappWaMe: '918373672844',
+  whatsappWaMe: '918374672844',
   location: 'Kothapeta, India',
   linkedin: 'https://www.linkedin.com/in/pavan-vallabhareddy/',
   github: 'https://github.com/Pavanvallabhareddy2024',
@@ -63,7 +57,7 @@ export const personal = {
   resumeUrl: '/resume.pdf',
   resumeDownloadFileName:
     'Sai_Pavan_Vallabhareddy_FullStack_Developer_Resume.pdf',
-  avatar: profilePlaceholder,
+  avatar: profilePhoto,
   /** Shown under “Currently” on the hero profile card */
   currentlyBuilding:
     'Building full-stack web applications & cloud-based systems',
