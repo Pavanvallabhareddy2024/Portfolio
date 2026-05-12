@@ -1,0 +1,5 @@
+# https://pavanvallabhareddyportfolio.pages.dev/
+User-agent: *
+Allow: /
+
+Sitemap: https://pavanvallabhareddyportfolio.pages.dev/sitemap.xml
