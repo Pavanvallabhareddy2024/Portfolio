@@ -55,7 +55,7 @@ const Counter = ({ value }) => {
 };
 
 /**
- * Same four milestone cards as the Achievements section — icon, animated stat, title, description.
+ * Same four milestone cards as the Milestones section — icon, animated stat, title, description.
  */
 const MilestoneCards = ({ className = '' }) => {
   return (

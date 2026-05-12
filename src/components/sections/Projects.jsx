@@ -188,7 +188,7 @@ const Projects = () => {
               Projects with <span className="text-gradient">real impact</span>
             </>
           }
-          description="From full-stack analytics platforms to inventory systems and a 200-day public build journey — here's what I've been crafting."
+          description="From full-stack analytics platforms to inventory systems and production-ready dashboards — here's what I've been crafting."
         />
 
         <div className="mt-14 flex flex-col gap-10 md:gap-12">

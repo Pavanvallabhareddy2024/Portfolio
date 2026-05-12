@@ -7,9 +7,6 @@ const projectDashpod =
   'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';
 const projectEmbeHome =
   'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80';
-const projectBuild200 =
-  'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80';
-
 import {
   SiReact,
   SiJavascript,
@@ -69,7 +66,7 @@ export const navLinks = [
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'achievements', label: 'Achievements' },
+  { id: 'milestones', label: 'Milestones' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -387,25 +384,6 @@ export const projects = [
       github: 'https://github.com/Pavanvallabhareddy2024',
     },
     accent: 'violet',
-  },
-  {
-    title: '200 Days Build Journey',
-    subtitle: 'Public Project Showcase Platform',
-    image: projectBuild200,
-    description:
-      'A public showcase platform documenting 200+ continuous days of building — featuring 40+ deployed projects, REST APIs, dashboards, SQL apps, JS demos and AWS features.',
-    features: [
-      '40+ deployed projects across full-stack categories',
-      '200+ day continuous development streak',
-      'Searchable, categorized project gallery',
-      'Live deployment pipelines and demos',
-    ],
-    tech: ['React.js', 'JavaScript', 'Node.js', 'AWS', 'Firebase'],
-    links: {
-      live: 'https://build200.lovable.app',
-      github: 'https://github.com/Pavanvallabhareddy2024',
-    },
-    accent: 'teal',
   },
 ];
 
