@@ -53,7 +53,7 @@ export const personal = {
   /** Served from /public/resume.pdf */
   resumeUrl: '/resume.pdf',
   resumeDownloadFileName:
-    'Sai_Pavan_Vallabhareddy_FullStack_Developer_Resume.pdf',
+    'Sai_Pavan_Vallabhareddy_Full_Stack_Developer_Resume.pdf',
   avatar: profilePhoto,
   /** Shown under “Currently” on the hero profile card */
   currentlyBuilding:
